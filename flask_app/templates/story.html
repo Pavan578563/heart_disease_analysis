@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Heart Disease Data Story{% endblock %}
+{% block content %}
+<section class="dash-header">
+  <h1>The Story Behind the Numbers</h1>
+  <p>Five scenes tracing the biggest drivers of heart disease in this dataset.</p>
+</section>
+{% for name, caption, chart in scenes %}
+<section class="scene">
+  <h2>{{ name }}</h2>
+  <p class="scene-caption">{{ caption }}</p>
+  <div class="chart-card">{{ chart | safe }}</div>
+</section>
+{% endfor %}
+{% endblock %}
